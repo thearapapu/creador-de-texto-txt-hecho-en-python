@@ -8,10 +8,12 @@ crear_archivo = input("¿Quieres crear un archivo? (s/n): ")
 #proceso si el usuario responde 's'
 if crear_archivo.lower() == 's':
     nombre_archivo = input("Introduce el nombre del archivo: ")
+    if not nombre_archivo.endswith('.txt'):
+        nombre_archivo += '.txt'
     with open(nombre_archivo, 'w') as archivo:
         #crea el archivo y escribe el contenido
         contenido = input("Introduce el contenido del archivo: ")
         archivo.write(contenido)
-        nombre_archivo += '.txt'
-        #resultado
+        time.sleep(2)
     print(f"Archivo '{nombre_archivo}' creado con éxito.")
+    time.sleep(2)
